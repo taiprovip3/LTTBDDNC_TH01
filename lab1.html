@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cal() {
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "text");
+            x.setAttribute("placeholder", "Type number a");
+            x.className = "numbera";
+            document.body.appendChild(x);
+
+            document.body.appendChild(document.createElement("br"));
+
+            var y = document.createElement("INPUT");
+            y.setAttribute("type", "text");
+            y.setAttribute("placeholder", "Type number b");
+            document.body.appendChild(y);
+
+            document.body.appendChild(document.createElement("br"));
+            var btn = document.createElement("BUTTON");
+            var t = document.createTextNode("Sum");
+            btn.appendChild(t);
+            document.body.appendChild(btn);
+
+            btn.addEventListener("click", function() {
+                var total = parseInt(x.value) + parseInt(y.value);
+                console.log(total);
+                var rs = document.createElement("p");
+                var rstext = document.createTextNode("Result: " + total);
+                rs.appendChild(rstext);
+                document.body.appendChild(rs);
+            });
+        }
+        cal();
+    </script>
+</body>
+
+</html>
